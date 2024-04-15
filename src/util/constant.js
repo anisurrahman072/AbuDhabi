@@ -1,6 +1,6 @@
 // Save all constants
 
-export const LOCALIZATION_LANGUAGES = {
+export const LANGUAGES = {
 	ENGLISH: 'en',
 	ARABIC: 'ar'
 }

@@ -12,7 +12,7 @@ import Login from './screens/Login.screen'
 // Utils
 import LocalizationContext from './util/context/localization'
 import AuthContext from './util/context/auth'
-import { LOCALIZATION_LANGUAGES } from './util/constant'
+import { LANGUAGES } from './util/constant'
 
 // Create stack for navigation
 const Stack = createStackNavigator()
@@ -47,7 +47,7 @@ function HomeStack() {
 export default function Navigator() {
 	// Create contexts STATE
 	const [localization, setLocalization] = useState({
-		language: LOCALIZATION_LANGUAGES.ENGLISH
+		language: LANGUAGES.ENGLISH
 	})
 	const [auth, setAuth] = useState({
 		token: null
