@@ -7,7 +7,9 @@ import {
 	Platform,
 	TouchableOpacity,
 	Image,
-	TextInput
+	TextInput,
+	KeyboardAvoidingView,
+	ScrollView
 } from 'react-native'
 import {
 	widthPercentageToDP as wp,
@@ -42,64 +44,68 @@ export default function Login({ navigation: { navigate, goBack }, route }) {
 	}
 
 	return (
-		<View style={styles.container}>
-			{/* Update Localization */}
-			<View style={styles.changeLocalizationBox}>
-				<TouchableOpacity
-					style={{
-						alignItems:
-							localization.language == LANGUAGES.ENGLISH
-								? 'flex-end'
-								: 'flex-start'
-					}}
-					onPress={() => updateLocalization()}>
-					<Text style={styles.changeLocalizationText}>
+		<KeyboardAvoidingView
+			behavior={Platform.OS === 'ios' ? 'padding' : ''}
+			style={styles.container}>
+			<ScrollView showsVerticalScrollIndicator={false}>
+				{/* Update Localization */}
+				<View style={styles.changeLocalizationBox}>
+					<TouchableOpacity
+						style={{
+							alignItems:
+								localization.language == LANGUAGES.ENGLISH
+									? 'flex-end'
+									: 'flex-start'
+						}}
+						onPress={() => updateLocalization()}>
+						<Text style={styles.changeLocalizationText}>
+							{findLocalText({
+								screenName: 'loginScreen',
+								local: localization.language,
+								attribute: 'localization'
+							})}
+						</Text>
+					</TouchableOpacity>
+				</View>
+
+				{/* Company Logo */}
+				<View style={styles.companyName}>
+					<Image resizeMode="contain" source={findImages.companyName} />
+				</View>
+
+				{/* Title */}
+				<View style={styles.titleBox}>
+					<Text style={styles.title}>
 						{findLocalText({
 							screenName: 'loginScreen',
 							local: localization.language,
-							attribute: 'localization'
+							attribute: 'title'
 						})}
 					</Text>
-				</TouchableOpacity>
-			</View>
+				</View>
 
-			{/* Company Logo */}
-			<View style={styles.companyName}>
-				<Image resizeMode="contain" source={findImages.companyName} />
-			</View>
-
-			{/* Title */}
-			<View style={styles.titleBox}>
-				<Text style={styles.title}>
-					{findLocalText({
-						screenName: 'loginScreen',
-						local: localization.language,
-						attribute: 'title'
-					})}
-				</Text>
-			</View>
-
-			{/* Input field */}
-			<View style={styles.textInputBox}>
-				<TextInput
-					style={styles.textInput}
-					value={code}
-					placeholder={findLocalText({
-						screenName: 'loginScreen',
-						local: localization.language,
-						attribute: 'placeholder'
-					})}
-					autoCapitalize={'none'}
-					onChangeText={(text) => setCode(text)}
-					selectionColor={'white'}
-				/>
-				<Image
-					resizeMode="contain"
-					source={findImages.microsoft}
-					style={styles.microsoft}
-				/>
-			</View>
-		</View>
+				{/* Input field */}
+				<View style={styles.textInputBox}>
+					<TextInput
+						style={styles.textInput}
+						value={code}
+						placeholder={findLocalText({
+							screenName: 'loginScreen',
+							local: localization.language,
+							attribute: 'placeholder'
+						})}
+						autoCapitalize={'none'}
+						onChangeText={(text) => setCode(text)}
+						selectionColor={'white'}
+					/>
+					<Image
+						resizeMode="contain"
+						source={findImages.microsoft}
+						style={styles.microsoft}
+					/>
+				</View>
+			</ScrollView>
+		</KeyboardAvoidingView>
 	)
 }
 
