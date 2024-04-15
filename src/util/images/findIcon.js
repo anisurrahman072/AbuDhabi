@@ -1,3 +1,3 @@
 export default FIND_ICONS = {
-	companyName: require('../../assets/brandName.png')
+	companyName: require('../../assets/companyName.png')
 }
