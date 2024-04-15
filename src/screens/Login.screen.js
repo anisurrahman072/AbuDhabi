@@ -107,7 +107,7 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: themeColor,
-		paddingTop: Platform.OS === 'ios' ? hp('6') : hp('4'),
+		paddingTop: Platform.OS === 'ios' ? hp(6) : hp(2),
 		paddingHorizontal: wp(5)
 	},
 	changeLocalizationBox: {
@@ -138,10 +138,11 @@ const styles = StyleSheet.create({
 	},
 	textInput: {
 		...FONTS.bold15,
-		height: hp('4%'),
+		height: hp(4),
 		width: wp(75),
 		color: '#333333',
 		paddingRight: wp(5),
+		paddingVertical: 0,
 		textAlign: 'right',
 		alignSelf: 'center'
 	},
