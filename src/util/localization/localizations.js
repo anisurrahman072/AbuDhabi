@@ -5,7 +5,7 @@ export default LOCALIZATIONS = {
 		en: {
 			localization: 'ةيبرعلا',
 			title: 'Welcome to the new intranet',
-			placeholder: 'Enter code'
+			placeholder: 'تسجيل الدخول'
 		},
 		ar: {
 			localization: 'English',

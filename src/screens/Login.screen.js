@@ -29,7 +29,7 @@ export default function Login({ navigation: { navigate, goBack }, route }) {
 	const { localization, setLocalization } = useContext(LocalizationContext)
 
 	// State
-	const [email, setEmail] = useState(null)
+	const [code, setCode] = useState(null)
 
 	// Update localization
 	function updateLocalization() {
@@ -65,7 +65,7 @@ export default function Login({ navigation: { navigate, goBack }, route }) {
 
 			{/* Company Logo */}
 			<View style={styles.companyName}>
-				<Image resizeMode="contain" source={findImages['companyName']} />
+				<Image resizeMode="contain" source={findImages.companyName} />
 			</View>
 
 			{/* Title */}
@@ -80,19 +80,23 @@ export default function Login({ navigation: { navigate, goBack }, route }) {
 			</View>
 
 			{/* Input field */}
-			<View>
+			<View style={styles.textInputBox}>
 				<TextInput
 					style={styles.textInput}
-					value={email}
+					value={code}
 					placeholder={findLocalText({
 						screenName: 'loginScreen',
 						local: localization.language,
 						attribute: 'placeholder'
 					})}
-					placeholderTextColor={'gray'}
 					autoCapitalize={'none'}
-					onChangeText={(text) => setEmail(text)}
+					onChangeText={(text) => setCode(text)}
 					selectionColor={'white'}
+				/>
+				<Image
+					resizeMode="contain"
+					source={findImages.microsoft}
+					style={styles.microsoft}
 				/>
 			</View>
 		</View>
@@ -124,15 +128,26 @@ const styles = StyleSheet.create({
 		...FONTS.bold46,
 		textAlign: 'center'
 	},
+	textInputBox: {
+		height: hp(6),
+		width: wp(90),
+		flexDirection: 'row',
+		backgroundColor: '#FFFFFF',
+		borderRadius: wp(4),
+		padding: wp(3)
+	},
 	textInput: {
 		...FONTS.bold15,
+		height: hp('4%'),
+		width: wp(75),
 		color: '#333333',
-		backgroundColor: '#FFFFFF',
-		height: hp('7%'),
-		borderWidth: 0.5,
-		borderRadius: wp(5),
-		borderColor: 'white',
-		paddingVertical: wp(3),
-		paddingHorizontal: wp(5)
+		paddingRight: wp(5),
+		textAlign: 'right',
+		alignSelf: 'center'
+	},
+	microsoft: {
+		width: 27,
+		height: 27,
+		alignSelf: 'center'
 	}
 })
