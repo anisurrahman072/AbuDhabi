@@ -84,7 +84,11 @@ export default function Login({ navigation: { navigate, goBack }, route }) {
 				<TextInput
 					style={styles.textInput}
 					value={email}
-					placeholder={'Email code'}
+					placeholder={findLocalText({
+						screenName: 'loginScreen',
+						local: localization.language,
+						attribute: 'placeholder'
+					})}
 					placeholderTextColor={'gray'}
 					autoCapitalize={'none'}
 					onChangeText={(text) => setEmail(text)}
