@@ -63,6 +63,17 @@ export default function Login({ navigation: { navigate, goBack }, route }) {
 			<View style={styles.companyName}>
 				<Image resizeMode="contain" source={findImages['companyName']} />
 			</View>
+
+			{/* Title */}
+			<View style={styles.titleBox}>
+				<Text style={styles.title}>
+					{findLocalText({
+						screenName: 'loginScreen',
+						local: localization.language,
+						attribute: 'title'
+					})}
+				</Text>
+			</View>
 		</View>
 	)
 }
@@ -83,5 +94,13 @@ const styles = StyleSheet.create({
 	},
 	companyName: {
 		alignItems: 'center'
+	},
+	titleBox: {
+		marginTop: hp(40),
+		marginBottom: hp(4)
+	},
+	title: {
+		...FONTS.bold46,
+		textAlign: 'center'
 	}
 })

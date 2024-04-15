@@ -3,6 +3,7 @@ import { StyleSheet } from 'react-native'
 const FONTS = StyleSheet.create({
 	// ################# Bold ##################
 	bold46: {
+		fontWeight: '700',
 		color: 'white',
 		fontSize: 46
 	},
