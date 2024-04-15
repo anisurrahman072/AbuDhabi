@@ -1,12 +1,13 @@
 // SDKs
-import React, { useContext } from 'react'
+import React, { useState, useContext } from 'react'
 import {
 	StyleSheet,
 	View,
 	Text,
 	Platform,
 	TouchableOpacity,
-	Image
+	Image,
+	TextInput
 } from 'react-native'
 import {
 	widthPercentageToDP as wp,
@@ -26,6 +27,9 @@ import { LANGUAGES } from '../util/constant'
 export default function Login({ navigation: { navigate, goBack }, route }) {
 	//context
 	const { localization, setLocalization } = useContext(LocalizationContext)
+
+	// State
+	const [email, setEmail] = useState(null)
 
 	// Update localization
 	function updateLocalization() {
@@ -74,6 +78,19 @@ export default function Login({ navigation: { navigate, goBack }, route }) {
 					})}
 				</Text>
 			</View>
+
+			{/* Input field */}
+			<View>
+				<TextInput
+					style={styles.textInput}
+					value={email}
+					placeholder={'Email code'}
+					placeholderTextColor={'gray'}
+					autoCapitalize={'none'}
+					onChangeText={(text) => setEmail(text)}
+					selectionColor={'white'}
+				/>
+			</View>
 		</View>
 	)
 }
@@ -96,11 +113,22 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	titleBox: {
-		marginTop: hp(40),
+		marginTop: hp(35),
 		marginBottom: hp(4)
 	},
 	title: {
 		...FONTS.bold46,
 		textAlign: 'center'
+	},
+	textInput: {
+		...FONTS.bold15,
+		color: '#333333',
+		backgroundColor: '#FFFFFF',
+		height: hp('7%'),
+		borderWidth: 0.5,
+		borderRadius: wp(5),
+		borderColor: 'white',
+		paddingVertical: wp(3),
+		paddingHorizontal: wp(5)
 	}
 })

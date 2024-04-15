@@ -7,6 +7,11 @@ const FONTS = StyleSheet.create({
 		color: 'white',
 		fontSize: 46
 	},
+	bold15: {
+		fontWeight: '700',
+		color: 'white',
+		fontSize: 15
+	},
 	bold11: {
 		color: 'white',
 		fontSize: 11
@@ -17,6 +22,10 @@ const FONTS = StyleSheet.create({
 	},
 
 	// ################# Regular  ##################
+	regular14: {
+		color: 'white',
+		fontSize: 14
+	},
 	regular16: {
 		color: 'white',
 		fontSize: 16

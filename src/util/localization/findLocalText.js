@@ -7,6 +7,5 @@ import LOCALIZATIONS from './localizations'
  * @parameter attribute. Ex: 'title'
  */
 export default function findLocalText({ screenName, local, attribute }) {
-	console.log(screenName, local, attribute)
 	return LOCALIZATIONS[screenName][local][attribute]
 }
