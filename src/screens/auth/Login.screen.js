@@ -17,14 +17,14 @@ import {
 } from 'react-native-responsive-screen'
 
 // Utils
-import { themeColor } from '../util/colors/colors'
-import LocalizationContext from '../util/context/localization.js'
-import findLocalText from '../util/localization/findLocalText.js'
-import findImages from '../util/images/findIcon.js'
-import FONTS from '../util/fonts/fontStyles.js'
+import { themeColor } from '../../util/colors/colors.js'
+import LocalizationContext from '../../util/context/localization.js'
+import findLocalText from '../../util/localization/findLocalText.js'
+import findImages from '../../util/images/findIcon.js'
+import FONTS from '../../util/fonts/fontStyles.js'
 
 // Constants
-import { LANGUAGES } from '../util/constant'
+import { LANGUAGES } from '../../util/constant.js'
 
 export default function Login({ navigation: { navigate, goBack }, route }) {
 	//context

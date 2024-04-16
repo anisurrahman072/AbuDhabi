@@ -7,7 +7,7 @@ import {
 import { StyleSheet } from 'react-native'
 
 // Screens
-import Login from './screens/Login.screen'
+import Login from './screens/auth/Login.screen'
 
 // Utils
 import LocalizationContext from './util/context/localization'
