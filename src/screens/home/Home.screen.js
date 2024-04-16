@@ -15,6 +15,7 @@ import {
 	widthPercentageToDP as wp,
 	heightPercentageToDP as hp
 } from 'react-native-responsive-screen'
+import { Icon } from '@rneui/themed'
 
 // Utils
 import { themeColor } from '../../util/colors/colors.js'
@@ -75,35 +76,11 @@ export default function Home({ navigation: { navigate, goBack }, route }) {
 
 				{/* Title */}
 				<View style={styles.titleBox}>
-					<Text style={styles.title}>
-						{findLocalText({
-							screenName: 'loginScreen',
-							local: localization.language,
-							attribute: 'title'
-						})}
-					</Text>
+					<Text style={styles.title}>HOME</Text>
 				</View>
 
-				{/* Input field */}
-				<View style={styles.textInputBox}>
-					<TextInput
-						style={styles.textInput}
-						value={code}
-						placeholder={findLocalText({
-							screenName: 'loginScreen',
-							local: localization.language,
-							attribute: 'placeholder'
-						})}
-						autoCapitalize={'none'}
-						onChangeText={(text) => setCode(text)}
-						selectionColor={'white'}
-					/>
-					<Image
-						resizeMode="contain"
-						source={findImages.microsoft}
-						style={styles.microsoft}
-					/>
-				</View>
+				{/* TEST ICON */}
+				<Icon type="ionicon" name="home-outline" size={26} reverse={true} />
 			</ScrollView>
 		</KeyboardAvoidingView>
 	)
