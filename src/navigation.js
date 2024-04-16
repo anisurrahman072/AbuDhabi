@@ -8,6 +8,7 @@ import { StyleSheet } from 'react-native'
 
 // Screens
 import Login from './screens/auth/Login.screen'
+import Home from './screens/home/Home.screen'
 
 // Utils
 import LocalizationContext from './util/context/localization'
@@ -38,7 +39,7 @@ function HomeStack() {
 				headerShown: false,
 				...TransitionPresets.SlideFromRightIOS
 			}}>
-			<Stack.Screen name="Login" component={Login} />
+			<Stack.Screen name="Home" component={Home} />
 		</Stack.Navigator>
 	)
 }
@@ -50,7 +51,7 @@ export default function Navigator() {
 		language: LANGUAGES.ENGLISH
 	})
 	const [auth, setAuth] = useState({
-		token: null
+		token: 'TEMP_TOKEN'
 	})
 
 	// Wrap contexts by memo for efficiency
